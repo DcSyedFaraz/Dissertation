@@ -23,13 +23,13 @@ class InvoiceApiController extends Controller
         {
             $invoices = null;
 
-            if( $request->query('status') ){
-                $status = Status::where('slug', '=', $request->query('status') )->firstOrFail();
-                $invoices = Invoice::where(['status_id' => $status->id])->with('order', 'user', 'status')->orderBy('created_at','desc')->get();
+            if ($request->query('status')) {
+                $status = Status::where('slug', '=', $request->query('status'))->firstOrFail();
+                $invoices = Invoice::where(['status_id' => $status->id])->with('order', 'user', 'status')->orderBy('created_at', 'desc')->get();
             } else {
-                $invoices = Invoice::with('order', 'user', 'status')->orderBy('created_at','desc')->get();
+                $invoices = Invoice::with('order', 'user', 'status')->orderBy('created_at', 'desc')->get();
             }
-// dd($invoice);
+            // dd($invoice);
             return InvoiceResource::collection($invoices)
                 ->response()
                 ->setStatusCode(Response::HTTP_OK);
@@ -44,9 +44,9 @@ class InvoiceApiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Invoice $invoice){
-        return(new InvoiceResource($invoice))->reponse()->setSatusCode(Response::HTTP_OK) ;
-
+    public function store(Invoice $invoice)
+    {
+        return (new InvoiceResource($invoice))->reponse()->setSatusCode(Response::HTTP_OK);
     }
 
     /**
@@ -77,9 +77,9 @@ class InvoiceApiController extends Controller
 
         $invoice->update($request->all());
 
-        if($invoice->status_id==5){
-           //Mail::to($invoice->user->email)->send(new PaymentPaidMail($invoice));
-           //Mail::to(config('app.mail_address'))->send(new PaymentPaidMail($invoice));
+        if ($invoice->status_id == 5) {
+            Mail::to($invoice->user->email)->send(new PaymentPaidMail($invoice));
+            Mail::to(config('app.mail_address'))->send(new PaymentPaidMail($invoice));
         }
 
         return (new InvoiceResource($invoice))

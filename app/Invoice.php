@@ -16,7 +16,7 @@ class Invoice extends Model
         "gateway",
         "amount",
         "auto_mail"=>0,
-        "currency"=>'usd',
+        "currency"=>'aed',
         "stripe_id",
         "status_id",
         "order_id",

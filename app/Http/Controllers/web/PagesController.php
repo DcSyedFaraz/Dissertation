@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\web;
 
+use App\AcademicLevel;
+use App\Deadline;
+use App\Fare;
 use App\Http\Controllers\Controller;
 use App\Mail\QueryAdminMail;
 use App\Mail\QueryMail;
+use App\PaperType;
 use App\Query;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,10 +18,10 @@ class PagesController extends Controller
 {
     public function index(){
 
-        // Auth::logout();
-        // dd(Auth::user());
-
-        return view('pages.home');
+        $paper_types=PaperType::orderBy('id', 'ASC')->get();
+        $academic_levels=AcademicLevel::orderBy('id','ASC')->get();
+        $deadlines=Deadline::orderBy('id','ASC')->get();
+        return view('pages.home',compact('paper_types','academic_levels','deadlines'));
     }
 
     public function about(){
@@ -38,6 +42,15 @@ class PagesController extends Controller
 
         // return redirect()->back()->withSuccess("Thank you for showing your intrest, We've receive your query successfully.");
 
+    }
+    public function getFare(Request $request)
+    {
+        return Fare::where(['academic_level_id' => $request->academic_level_id, 'deadline_id' => $request->deadline_id])->firstOrFail();
+
+    }
+    public function price(){
+
+        return view('pages.pricing');
     }
 
 }

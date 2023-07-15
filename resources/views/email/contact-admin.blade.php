@@ -11,7 +11,7 @@
                                 <td colspan="4" valign="top"
                                     style="border-collapse:collapse;border:0;margin:0;padding:0;color:#555559;font-family:Arial,sans-serif;font-size:16px;line-height:26px;background-color:#fff;border-bottom:4px solid #1e7a89;text-align:center">
                                     <a href="{{route('home')}}" target="_blank">
-                                        <img  src="{{ asset('imgs/logo.png') }}"  alt="{{env('APP_NAME', config('app.name'))}}" style=" width:100px;">
+                                        <img  src="{{ asset('images/logo.png') }}"  alt="{{env('APP_NAME', config('app.name'))}}" style=" width:100px;">
                                     </a>
                                 </td>
                             </tr>

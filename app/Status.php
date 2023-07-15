@@ -13,6 +13,7 @@ class Status extends Model
     protected $fillable=[
         'id',
         'name',
+        'slug',
         'css_class',
     ];
 }

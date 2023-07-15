@@ -40,7 +40,7 @@ use Carbon\Carbon;
 
     function addCurrency($value)
     {
-        return number_format((float)$value, 2, '.', '')." USD";
+        return number_format((float)$value, 2, '.', '')." AED";
     }
 
     function showDateTime($date)
@@ -52,5 +52,5 @@ use Carbon\Carbon;
     {
         return Carbon::parse($date)->format('\(l\)  jS \of F Y \a\t h:i:s A');
     }
-    
+
 

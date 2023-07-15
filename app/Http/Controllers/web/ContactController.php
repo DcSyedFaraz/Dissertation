@@ -24,7 +24,7 @@ class ContactController extends Controller
         $contact= Contact::create($request->all());
 
          // Send mail to user
-       //Mail::to($contact->email)->send(new ContactMail($contact));
+       Mail::to($contact->email)->send(new ContactMail($contact));
         // Send mail to admin
        Mail::to(config('app.mail_address'))->send(new ContactAdminMail($contact));
 

@@ -81,7 +81,7 @@
                                 </div> --}}
                                 <div class="mb-3 {{ $errors->has('image') ? 'has-error' : '' }}">
                                     <label for="image">{{ trans('cruds.blog.fields.image') }}</label>
-                                    <input class="form-control {{ $errors->has('image') ? 'is-invalid' : '' }}" type="file" name="image" id="image" value="">{{ old('iamge_path',$blog->image_path)}}
+                                    <input class="form-control {{ $errors->has('image') ? 'is-invalid' : '' }}" type="file" name="image" id="image" value="">{{ old('iamge_path',$blog->image_path) }}
                                     @if($errors->has('image'))
                                         <em class="invalid-feedback">
                                             {{ $errors->first('image') }}

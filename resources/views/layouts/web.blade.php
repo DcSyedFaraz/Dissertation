@@ -9,7 +9,7 @@
 
     {{-- No Index --}}
    <meta name="robots" content="index,follow">
-    
+
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="xFfFMm0UfLUjLAT6s3EW3gIZplo9RTcKeiBHRHCz">
 
@@ -55,7 +55,7 @@
 
     {{-- Alpine JS --}}
     <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
-    
+
     {{-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> --}}
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script> --}}
     @yield('links')
@@ -72,17 +72,17 @@
     @endif
     @yield('content')
 
-    
+
 
     {{-- Footer --}}
     @include('partials.frontend.footer')
 
     {{-- Tawto --}}
-     {{ TawkTo::widgetCode('https://embed.tawk.to/5ea44eec69e9320caac73ec7/default') }} 
+     {{-- {{ TawkTo::widgetCode('https://embed.tawk.to/5ea44eec69e9320caac73ec7/default') }}  --}}
 
     {{-- scripts --}}
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    
+
     {{-- jQuery cdn --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {{-- AJAX jQuery cdn --}}
@@ -93,7 +93,7 @@
     {{-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script> --}}
 
-   
+
     {{-- <script src="jquery.countup.js"></script> --}}
 
     @yield('scripts')

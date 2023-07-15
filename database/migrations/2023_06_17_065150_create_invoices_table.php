@@ -17,7 +17,7 @@ class CreateInvoicesTable extends Migration
             $table->increments('id');
             $table->string('ref_no')->unique();
             $table->string('gateway')->nullable();
-            $table->string('currency')->default('usd');
+            $table->string('currency')->default('aed');
             $table->string('stripe_id')->nullable();
             $table->double('amount');
             $table->integer('auto_mail')->default(0);

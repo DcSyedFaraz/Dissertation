@@ -90,6 +90,14 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
 Route::group(['namespace' => 'Web'], function () {
     Route::get('/', 'PagesController@index')->name('home');
     Route::get('/about-us', 'PagesController@about')->name('about');
+    Route::view('/samples','pages.sample')->name('sample');
+    Route::view('/reviews','pages.reviews')->name('reviews');
+    Route::view('/revision-policy','pages.legal.revision')->name('revision');
+    Route::view('/refund-policy', 'pages.legal.refund')->name('refund');
+    Route::view('/privacy-policy', 'pages.legal.privacy')->name('privacy');
+    Route::view('/terms-and-conditions', 'pages.legal.terms')->name('terms');
+    Route::post('/get-fare',    "PagesController@getFare")->name('get.fare');
+    Route::get('/pricing','PagesController@price')->name('price');
 
     //Order
     Route::get('/order', 'OrderController@create')->name('order');

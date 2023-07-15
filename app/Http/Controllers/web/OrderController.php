@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderAdminMail;
 use App\Mail\OrderMail;
 use App\Mail\UserCreateMail;
-
+use App\Status;
 use League\CommonMark\Reference\Reference;
 
 class OrderController extends Controller
@@ -49,6 +49,8 @@ class OrderController extends Controller
         $countries = Country::orderBy('id', 'ASC')->get();
         $web_setting = WebSetting::first();
         $fares = Fare::all();
+        // $stat = Status::all();
+        // return $stat;
         return view('pages.order', compact('paper_types', 'fares', 'academic_levels', 'deadlines', 'reference_styles', 'subjects', 'countries', 'web_setting'));
     }
     public function store(StoreOrderRequest $request)
@@ -91,11 +93,12 @@ class OrderController extends Controller
             // $this->password = $password;
 
             DB::beginTransaction();
-            // dd($request);
             $user = User::where(['email' => $request->email])->first();
             // dd($user);
+
             // flag to check user is created default false
             $flag = false;
+            // dd($flag);
 
             if (!$user) {
 
@@ -112,17 +115,14 @@ class OrderController extends Controller
                     ],
                 );
 
-            }
                 $user->roles()->sync(2);
-
-
-
-
-                $deadline_id =  Deadline::where('name', $request->deadline)->first();
-                $request->merge(['user_id' => $user->id, 'package_id' => $request->package, 'deadline_id' =>$deadline_id->id]);
+                // dd($request);
                 // $this->user_created = true;
                 // dd($request);
                 session()->flash('userData', ['userEmail' => 'Customer Account' . ' ' . $user->email . ' ' . 'created successfully check your email for login credentials', 'userId' => $user->id]);
+            }
+            $deadline_id =  Deadline::where('name', $request->deadline)->first();
+            $request->merge(['user_id' => $user->id, 'package_id' => $request->package, 'deadline_id' =>$deadline_id->id]);
             // dd($request);
             $order = Order::create(
 
@@ -162,11 +162,12 @@ class OrderController extends Controller
                 'flag' => $flag,
                 'invoice' => $invoice,
             ];
+            // dd($order);
             // Send mail to user
-           //Mail::to($request->email)->send(new OrderMail($data));
+           Mail::to($request->email)->send(new OrderMail($data));
 
             // // Send mail to admin
-           //Mail::to(config('app.mail_address'))->send(new OrderAdminMail($request, $files, $order));
+           Mail::to(config('app.mail_address'))->send(new OrderAdminMail($request, $files, $order));
 
 
 

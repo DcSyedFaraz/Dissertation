@@ -1,7 +1,7 @@
    <!-- Top bar -->
    <div class="bg-[#6ec1e4] ">
     <div class="container flex flex-col items-center mx-auto md:flex-row sm:justify-between py-3 px-10">
-        <div class=" space-x-4 flex flex-col md:flex-row  font-medium text-center">
+        <div class=" space-x-3 flex flex-col md:flex-row  font-medium text-center">
             <a href="{{ $web_setting->whatsapp_no }}"><i class="fa fa-whatsapp "></i>{{ '+'.$web_setting->contact }}</a>
         <div class="md:hidden block" >
               <a href="tel:+97142783585"><i class="fa fa-phone "></i>+97142783585</a>
@@ -11,9 +11,9 @@
               <!--</p>-->
                         <!--<a href="tel:(001)224-338-5225"><i class="fa fa-phone mr-2"></i>(001)224-338-5225</a>-->
             <span class="whitespace-nowrap overflow-hidden"><a href="mailto:{{ $web_setting->email }}">
-                <i class="fa fa-envelope-o mr-2 "></i>{{ $web_setting->email }}</a></span>    
+                <i class="fa fa-envelope-o mr-2 "></i>{{ $web_setting->email }}</a></span>
         </div>
-        
+
         <div class=" space-x-3">
             <a href="{{ $web_setting->whatsapp_no }}"><i class="fa fa-whatsapp"></i></a>
             <a href="{{ $web_setting->facebook_link }}"><i class="fa fa-facebook"></i></a>
@@ -45,7 +45,7 @@
 
         </div>
         <nav :class="{'flex': open, 'hidden': !open}"
-            class="flex-col flex-grow pb-4 lg:pb-0 hidden lg:flex lg:justify-end lg:flex-row lg:space-x-4 xl:space-x-8">
+            class="flex-col flex-grow pb-4 lg:pb-0 hidden lg:flex lg:justify-end lg:flex-row lg:space-x-4 xl:space-x-4">
 
             <a href="{{ route('home') }}" class="block font-semibold py-2 hover:text-[#6ec1e4] {{ request()->routeIs('home') ? '  text-primary-one' : '' }}">Home</a>
 
@@ -74,12 +74,12 @@
                         @if (!empty($services))
                             @foreach ($services as $service)
                                 <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-[#6ec1e4] focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                            href="{{ route('service.show',$service->slug) }}">{{ $service->name }}</a>        
-                            @endforeach                            
-                        @endif       
-                        
-                        
-                        
+                            href="{{ route('service.show',$service->slug) }}">{{ $service->name }}</a>
+                            @endforeach
+                        @endif
+
+
+
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@
                 <span class="animate-wave text-sm font-bold inline-block py-1 px-2 rounded text-white bg-primary-one  last:mr-0 ml-3 mr-5">
                     AED 40
                 </span></div>
-                
+
                 <a href="{{ route('price') }}" id="priceTag" class="block font-semibold text-primary-three hover:text-[#6ec1e4] py-2 lg:mx-2 {{ request()->routeIs('price') ? '  text-primary-one' : '' }}">Pricing</a>
             </div>
             <a href="{{ route('price') }}" id="priceTag" class="block md:hidden font-semibold text-primary-three hover:text-[#6ec1e4] py-2 lg:mx-2 {{ request()->routeIs('price') ? '  text-primary-one' : '' }}">Pricing</a>
@@ -96,9 +96,18 @@
             <a href="{{ route('blog') }}" class="block font-semibold py-2 hover:text-[#6ec1e4] {{ request()->routeIs('blog') || request()->routeIs('blog.one') || request()->routeIs('blog.two')  ? '  text-primary-one' : '' }}">Blog</a>
             <a href="{{ route('reviews') }}" class="block font-semibold py-2 hover:text-[#6ec1e4] {{ request()->routeIs('reviews')   ? '  text-primary-one' : '' }}">Reviews</a>
             <a href="{{ route('contact') }}" class="block font-semibold py-2 hover:text-[#6ec1e4] {{ request()->routeIs('contact') ? '  text-primary-one' : '' }}">Contact</a>
-            <a href="{{ route('order') }}" class="block font-semibold py-3 px-8 rounded bg-primary-one text-white ">
-                <span>Order Now</span>
+            <a href="{{ route('order') }}" class="block font-semibold py-1 px-6 my-3 md:my-0 rounded bg-primary-one text-white ">
+                <span>Order&nbsp;Now</span>
             </a>
+            @if (Auth::user())
+                                <a href="{{ route('login') }}"
+                                    class="block font-semibold py-3 px-6 rounded bg-primary-one text-white"
+                                    aria-current="page">Welcome, {{ Auth::user()->name }}</a>
+                                    @else
+                                    <a href="{{ route('login') }}"
+                                    class="block font-semibold py-1 px-6 rounded bg-primary-one text-white"
+                                    aria-current="page">Login/Register</a>
+                                    @endif
         </nav>
     </div>
 </div>

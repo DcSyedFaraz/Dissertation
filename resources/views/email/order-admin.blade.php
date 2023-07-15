@@ -11,7 +11,7 @@
                                 <td colspan="4" valign="top"
                                     style="border-collapse:collapse;border:0;margin:0;padding:0;color:#555559;font-family:Arial,sans-serif;font-size:16px;line-height:26px;background-color:#fff;border-bottom:4px solid #1e7a89;text-align:center">
                                     <a href="{{route('home')}}" target="_blank">
-                                        <img  src="{{ asset('imgs/logo.png') }}" alt="{{env('APP_NAME', config('app.name'))}}" style=" width:100px;">
+                                        <img  src="{{ asset('images/logo.png') }}" alt="{{env('APP_NAME', config('app.name'))}}" style=" width:100px;">
                                     </a>
                                 </td>
                             </tr>
@@ -38,30 +38,23 @@
                                                         <br>
                                                         <strong>  Paper Topic : {{$data['paper_topic']}}</strong>
                                                         <br>
-                                                        <strong>  Academic Level : {{ $data['academic_level'] }}</strong> 
+                                                        <strong>  Academic Level : {{ $data['academic_level'] }}</strong>
                                                         <br>
-                                                        <strong>  No Of Pages : {{ $data['number_of_pages'] }}</strong> 
+                                                        <strong>  No Of Pages : {{ $data['number_of_pages'] }}</strong>
                                                         <br>
-                                                        <strong>  Detail : {{ $data['detail'] }}</strong> 
+                                                        <strong>  Detail : {{ $data['detail'] }}</strong>
                                                         <br>
-                                                        <strong>  Reference Style : {{ $data['reference_style'] }}</strong> 
+                                                        <strong>  Reference Style : {{ $order->styleName }}</strong>
                                                         <br>
                                                         <strong>  Deadline : {{ $data['deadline'] }}</strong>
                                                         <br>
                                                         <strong> Price Per Page : {{ $data['cost_per_page'] .'AED' }}  </strong>
                                                         <br>
-                                                        <strong>  Total Price : {{ $data['total_price'] .'AED' }}</strong> 
+                                                        <strong>  Total Price : {{ $data['total_price'] .'AED' }}</strong>
                                                         <br>
                                                         <strong>  References : {{ $data['style'] }}</strong>
                                                         <br>
-                                                        <strong>  Spacing : @if($data['spacing']==0)
-                                                                    {{ 'Single Space' }}
-                                                            
-                                                                    @else
-                                                                    {{ 'Double Space' }}
-                                                            @endif </strong>
-                                                        <br>
-                                                        <strong>  Subject : {{ $data['subject'] }}</strong>
+                                                        <strong>  Subject : {{ $order->subjectName }}</strong>
                                                         <br>
                                                         <br>
                                                     </div>
@@ -80,7 +73,7 @@
                                                     style="border-collapse:collapse;border:0;margin:0;padding:20px;color:#555559;font-family:Arial,sans-serif;font-size:12px;line-height:16px;vertical-align:middle;text-align:center;width:580px">
                                                     <div>
                                                         <b>{{config('app.app_name')}}</b>
-                                                        <br> © {{ now()->year }}
+                                                        <br> © {{now()->year}}
                                                         <br>
                                                     </div>
                                                 </td>

@@ -19,19 +19,24 @@ class OrdersApiController extends Controller
     public function index(Request $request)
     {
         // dd(config('services.payment.token'));
-        $orders = null;
 
-        if( $request->query('status') ){
-            $status = Status::where('slug', '=', $request->query('status') )->firstOrFail();
-            $orders = Order::with('deadline', 'academic_Level', 'orderService', 'status', 'user','files', 'invoice.status' )->where(['status_id' => $status->id ])->orderBy('created_at','desc')->get();
+        {
 
-        } else {
-            // $orders = Order::all();
-            // dd($orders);
-            $orders = Order::with('status','invoice', 'user','files','deadlineName', 'invoice.status' )->orderBy('created_at','desc')->get();
+            $orders = null;
 
+            if( $request->query('status') ){
+                $status = Status::where('slug', '=', $request->query('status'))->firstOrFail();
+                $orders = Order::where(['status_id' => $status->id ])->with('deadlineName', 'status', 'user','files', 'invoice.status' )->orderBy('created_at','desc')->get();
+
+            } else {
+                // $orders = Order::all();
+                // dd($orders);
+                $orders = Order::with('status','invoice', 'user','files','deadlineName', 'invoice.status' )->orderBy('created_at','desc')->get();
+
+            }
             return OrderResource::collection($orders)->response()->setStatusCode(Response::HTTP_OK);
         }
+
 
     }
 
@@ -70,6 +75,7 @@ class OrdersApiController extends Controller
      */
     public function update(Request $request,Order $order)
     {
+        $order->update($request->all());
         return (new OrderResource($order))
             ->response()
             ->setStatusCode(Response::HTTP_ACCEPTED);

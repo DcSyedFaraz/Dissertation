@@ -54,7 +54,7 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
-    'app_name' => 'Assignment Help Expert',
+    'app_name' => 'Dissertation Writing Help',
 
     'asset_url' => env('ASSET_URL', null),
     'mail_address' => env('MAIL_FROM_ADDRESS'),
