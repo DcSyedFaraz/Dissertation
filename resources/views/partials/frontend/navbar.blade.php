@@ -30,7 +30,7 @@
         style="max-width: 1536px;">
         <div class=" flex flex-row items-center justify-between">
             <a class="flex items-center py-4 px-2 -mt-4" href="{{ route('home') }}">
-                <img src="../imgs/logo.png" alt="Logo" class="h-16 mt-3 my-auto" >
+                <img src="/imgs/logo.png" alt="Logo" class="h-16 mt-3 my-auto" >
             </a>
             <button class="lg:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">

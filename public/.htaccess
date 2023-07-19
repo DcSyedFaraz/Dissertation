@@ -5,6 +5,9 @@
 
     RewriteEngine On
 
+    RewriteCond %{SERVER_PORT} 80
+    RewriteRule ^(.*)$ https://dissertationwritinghelp.ae/$1 [R,L]
+
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
@@ -18,4 +21,16 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
 </IfModule>
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^dissertationwritinghelp\.ae$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.dissertationwritinghelp\.ae$
+RewriteRule ^(.*)$ "https\:\/\/dissertationwritinghelp\.ae/$1" [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit

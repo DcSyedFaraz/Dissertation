@@ -11,8 +11,8 @@
     <div class="container mx-auto lg:px-4 py-6 h-[32rem]">
         <div class="flex flex-col space-y-4 my-2 md:my-0 lg:flex-row lg:mx-4">
 
-            <div class="panel w-full sm:w-[70%] lg:w-[35%] xl:w-[30%] mx-auto ">
-               <div class="my-auto lg:mt-32">
+            <div class="panel w-[70%] lg:w-[35%] xl:w-[30%] mx-auto ">
+               <div class="my-auto mt-32">
                     @if (session('status'))
                         <div class="bg-green-500 text-white padding-12 text-center my-4" role="alert">
                             {{ session('status') }}
