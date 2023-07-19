@@ -27,7 +27,8 @@ class PagesController extends Controller
     public function about(){
 
         // dd(addCurrency(4));
-        return view('pages.about');
+        $data = Fare::all();
+        return view('pages.about', compact('data'));
     }
     public function queryStore( Request $request){
         // dd($request);

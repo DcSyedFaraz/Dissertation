@@ -58,6 +58,9 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
     'mail_address' => env('MAIL_FROM_ADDRESS'),
+    'tawk_to' => env('TAWKTO_LINK'),
+    'payment' => env('PAYMENT_APP_URL'),
+    'source' =>env('APP_SLUG'),
 
     /*
     |--------------------------------------------------------------------------

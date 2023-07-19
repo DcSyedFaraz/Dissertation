@@ -1,130 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
 <style>
-    .table-one {
-        align-items: center;
-        justify-items: center;
-        text-align: center;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+@media only screen and (max-width: 600px) {
+.inner-body {
+width: 100% !important;
+}
 
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        margin-left: auto;
-        margin-right: auto;
+.footer {
+width: 100% !important;
+}
+}
 
-    }
+@media only screen and (max-width: 500px) {
+.button {
+width: 100% !important;
+}
+}
+.table_style{
+    border: 2px solid #00526C;text-align: left;padding: 8px;width: 14rem;color: black;font-size: 17px;
 
+}
 
-    /* th,
-    td {
-        border: 2px solid red;
-        text-align: left;
-        padding: 8px;
-        width: 14rem;
-        color: black;
-        font-size: 17px;
-
-    } */
-
-
-    img {
-        width: 150px;
-
-    }
-
-    .div-2 {
-        background-color: lightblue;
-    }
-
-    p {
-        text-align: left;
-        color: black;
-        margin-left: 8px;
-        margin-right: 8px
-    }
-
-    button {
+    .btn_pri {
         padding: 10px;
         padding-left: 20px;
         padding-right: 20px;
         border-radius: 10px;
         color: white;
-        background-color: rgb(21, 172, 223);
+        background-color: #181D26;
         margin-top: 20px;
-        border: 3px solid red;
+        border: 3px solid #00526C;
         font-weight: bold;
         margin-bottom: 20px;
         font-size: 20px;
         margin-left: auto;
         margin-right: auto;
+        display: flex ;
+        justify-items: center
 
     }
+
+    .container_style{
+        margin: auto;
+        padding:4rem;
+        align-content: center;
+        text-align: center;
+    }
+
+    span{
+        padding-left: 8px;
+    }
+
+    p{
+        padding-left: 8px;
+    }
+
 </style>
 
-<div style="background-color:lightgrey ">
-    <div class="table-one">
+<table class="wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+<tr>
+<td align="center">
+<table class="content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
+{{-- {{ $header ?? '' }} --}}
+@include('vendor.mail.html.header')
 
-        <table align="center"
-            style="font-weight:normal;border-collapse:collapse;border:0;margin-left:auto;margin-right:auto;padding:0;font-family:Arial,sans-serif;color:#555559;background-color:white;font-size:16px;line-height:26px;width:600px;">
-            <tbody>
-                <tr>
-                    <td {{-- border:1px solid #eeeff0; margin:0; margin:0;--}}
-                        style="border-collapse:collapse;padding:0;border:0;color:#555559;font-family:Arial,sans-serif;font-size:16px;line-height:26px">
-                        <table
-                            style="font-weight:normal;border-collapse:collapse;border:0;padding:0;font-family:Arial,sans-serif">
-                            <tbody>
-                                <tr>
-                                    <td colspan="4" valign="top"
-                                        style="border-collapse:collapse;border:0;margin:0;padding:0;color:#555559;font-family:Arial,sans-serif;font-size:16px;line-height:26px;background-color:lightblue;border-bottom:4px solid #19bcbd;text-align:center">
-                                        <a href="{{ route('home') }}" target="_blank">
-                                            <img src="{{ asset('imgs/cheapresumeLogo.png') }}"
-                                                alt="{{ env('APP_NAME', 'cheapresumewriter') }}"
-                                                style="width:150px; margin-top:10px;">
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="border-collapse:collapse;border:0;background-color:lightgrey">
-                                        @yield('content')
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td
-                                        style="border-collapse:collapse;border:0;padding: 10px;background-color: lightblue">
+<!-- Email Body -->
+<tr>
+<td class="body" width="100%" cellpadding="0" cellspacing="0">
+<table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0" role="presentation">
+<!-- Body content -->
+@yield('content')
 
 
-                                        <span>
-                                            <a
-                                                href="https://www.facebook.com/people/Cheap-Resume-Writer-USA/100083135802094/"><img
-                                                    src="{{ asset('imgs/email-footer/5a22b43e909176.0984090415122238065922.png') }}"
-                                                    alt="{{ env('APP_NAME', 'cheapresumewriter') }}"
-                                                    style="width:20px; "></a>
-                                            <a href="https://www.instagram.com/cheapresumewriterusa/"><img
-                                                    src="{{ asset('imgs/email-footer/5a355496a61e55.7452819615134445026804.png') }}"
-                                                    alt="{{ env('APP_NAME', 'cheapresumewriter') }}"
-                                                    style="width:20px;"></a>
-                                            <a href="https://api.whatsapp.com/send/?phone=0012243385225"><img
-                                                    src="{{ asset('imgs/email-footer/transparent-social-media-icons-icon-whatsapp-icon-5dd10656a77cf0.019391031573979734686.png') }}"
-                                                    alt="{{ env('APP_NAME', 'cheapresumewriter') }}"
-                                                    style="width:20px; "></a>
-                                        </span>
-                                        <p style="text-align: center">© 2018 - 2022. All rights reserved <a
-                                                href="{{ route('home') }}" style="color:red">cheapresumewriter.com</a>
-                                        </p>
 
-                                    </td>
+<tr>
+<td class="content-cell">
+{{-- {{ Illuminate\Mail\Markdown::parse($slot) }} --}}
 
-                                </tr>
-                            </tbody>
-                        </table>
+{{-- {{ $subcopy ?? '' }} --}}
 
-                    </td>
-                </tr>
-            </tbody>
-        </table>
 
-    </div>
 
-</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+{{-- {{ $footer ?? '' }} --}}
+@include('vendor.mail.html.footer')
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

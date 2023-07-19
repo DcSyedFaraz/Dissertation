@@ -10,6 +10,17 @@
       'Debugbar' => 'Barryvdh\\Debugbar\\Facades\\Debugbar',
     ),
   ),
+  'emotality/tawk-laravel' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Emotality\\TawkTo\\TawkToServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'TawkTo' => 'Emotality\\TawkTo\\TawkTo',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 

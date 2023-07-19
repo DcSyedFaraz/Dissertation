@@ -162,12 +162,12 @@ class OrderController extends Controller
                 'flag' => $flag,
                 'invoice' => $invoice,
             ];
-            // dd($order);
+            // dd($data);
             // Send mail to user
            Mail::to($request->email)->send(new OrderMail($data));
 
             // // Send mail to admin
-           Mail::to(config('app.mail_address'))->send(new OrderAdminMail($request, $files, $order));
+          Mail::to(config('app.mail_address'))->send(new OrderAdminMail($request, $files, $order,$data));
 
 
 

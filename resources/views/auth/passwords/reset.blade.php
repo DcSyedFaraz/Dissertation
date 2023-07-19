@@ -5,7 +5,7 @@
     <div class="flex flex-col space-y-4 my-2 md:my-0 lg:flex-row lg:mx-4">
         <div class="w-full lg:w-[65%] xl:w-[70%] px-2 lg:py-5 my-auto">
             <div class="sm:col-span-2 my-auto px-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-6 lg:gap-x-10">
+                {{-- <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-6 lg:gap-x-10">
                     <div class="bg-primary-one py-6 px-4 text-white text-center rounded-2xl max-w-xs mx-auto space-y-2">
                         <img src="{{ asset('images/payments/icon1.png') }}" class="h-20 mx-auto">
                         <p class="text-lg font-semibold">Affordable Rates</p>
@@ -26,7 +26,7 @@
                         <p class="text-lg font-semibold">ATS Friendly</p>
                         <p>ATS (Applicant Tracking System) friendly Assignment to make sure it gets the maximum reach.</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="panel w-full sm:w-[70%] lg:w-[35%] xl:w-[30%] mx-auto ">

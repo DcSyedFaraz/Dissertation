@@ -71,7 +71,7 @@
 
 
                         <div class="w-full px-6 py-4 text-center">
-                            <a href="{{ url('http://checkout.cvwriters.ae/payment?reference=' . $invoice->ref_no . '&gateway=stripe&source=drh') }}"
+                            <a href="{{ url(config('app.payment') . 'payment?reference=' . $invoice->ref_no . '&gateway=stripe&source=' . config('app.source'))}}"
                                 class="btn block">
                                 {{ 'Pay ' . addCurrency($invoice->amount)}}
                             </a>

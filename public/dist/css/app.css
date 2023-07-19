@@ -898,44 +898,16 @@ video {
   height: 0.35rem;
 }
 
-.h-full {
-  height: 100%;
-}
-
-.h-\[\] {
-  height: ;
-}
-
-.h-\[100\%\] {
-  height: 100%;
-}
-
-.h-\[100px\] {
-  height: 100px;
-}
-
-.h-\[70rem\] {
-  height: 70rem;
-}
-
-.h-\[50rem\] {
-  height: 50rem;
-}
-
-.h-\[0rem\] {
-  height: 0rem;
-}
-
-.h-\[30rem\] {
-  height: 30rem;
+.h-\[32rem\] {
+  height: 32rem;
 }
 
 .h-\[40rem\] {
   height: 40rem;
 }
 
-.h-\[32rem\] {
-  height: 32rem;
+.h-full {
+  height: 100%;
 }
 
 .w-1\/2 {
@@ -996,10 +968,6 @@ video {
 
 .w-full {
   width: 100%;
-}
-
-.w-\[30\%\] {
-  width: 30%;
 }
 
 .max-w-2xl {
@@ -1134,14 +1102,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.place-content-center {
-  place-content: center;
-}
-
-.place-items-center {
-  place-items: center;
 }
 
 .items-center {
@@ -1408,6 +1368,11 @@ video {
   border-style: dashed;
 }
 
+.border-\[\#6ec1e4\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(110 193 228 / var(--tw-border-opacity));
+}
+
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1470,15 +1435,6 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.border-\[\] {
-  border-color: ;
-}
-
-.border-\[\#6ec1e4\] {
-  --tw-border-opacity: 1;
-  border-color: rgb(110 193 228 / var(--tw-border-opacity));
 }
 
 .border-t-purple-100 {
@@ -1558,25 +1514,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-slate-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 85 105 / var(--tw-bg-opacity));
-}
-
-.bg-slate-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
-
-.bg-slate-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
-.bg-\[\] {
-  background-color: ;
 }
 
 .from-primary-one {
@@ -1703,6 +1640,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1726,11 +1668,6 @@ video {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
 }
 
 .pb-10 {
@@ -2135,23 +2072,21 @@ video {
   border-bottom-right-radius: 0.75rem;
   border-width: 2px;
   --tw-border-opacity: 1;
-  border-color: rgb(30 122 137 / var(--tw-border-opacity));
+  border-color: rgb(255 207 86 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
-  background-color: rgb(30 122 137 / var(--tw-bg-opacity));
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  background-color: rgb(255 207 86 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   font-weight: 500;
   text-transform: uppercase;
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .btn:hover {
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  border-radius: 0px;
 }
 
 @media (min-width: 768px) {
@@ -2363,11 +2298,6 @@ video {
   .sm\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
-  }
-
-  .sm\:my-0 {
-    margin-top: 0px;
-    margin-bottom: 0px;
   }
 
   .sm\:mb-0 {
@@ -2646,16 +2576,6 @@ video {
     margin-right: 2rem;
   }
 
-  .lg\:my-1 {
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .lg\:my-0 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
@@ -2686,10 +2606,6 @@ video {
 
   .lg\:w-\[65\%\] {
     width: 65%;
-  }
-
-  .lg\:w-\[30\%\] {
-    width: 30%;
   }
 
   .lg\:max-w-3xl {
@@ -2860,12 +2776,6 @@ video {
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .xl\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2rem * var(--tw-space-x-reverse));
-    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .xl\:space-x-4 > :not([hidden]) ~ :not([hidden]) {

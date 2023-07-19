@@ -7,7 +7,10 @@
     'url' => 'http://dissertationwritinghelp.ae/',
     'app_name' => 'Dissertation Writing Help',
     'asset_url' => NULL,
-    'mail_address' => NULL,
+    'mail_address' => 'info@dissertationwritinghelp.ae',
+    'tawk_to' => 'https://tawk.to/chat/5ea44eec69e9320caac73ec7/default',
+    'payment' => 'http://checkout.cvwriters.ae/',
+    'source' => 'drh',
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
@@ -335,7 +338,7 @@
   ),
   'debugbar' => 
   array (
-    'enabled' => false,
+    'enabled' => NULL,
     'except' => 
     array (
       0 => 'telescope*',
@@ -598,7 +601,7 @@
     ),
     'from' => 
     array (
-      'address' => 'hello@example.com',
+      'address' => 'info@dissertationwritinghelp.ae',
       'name' => 'Dissertation Writing Help',
     ),
     'markdown' => 
@@ -731,7 +734,7 @@
     ),
     'payment' => 
     array (
-      'url' => 'http://checkout.cvwriters.ae/api/v1',
+      'url' => 'http://checkout.cvwriters.ae/',
       'key' => 'drh',
       'token' => 'Lkg4XKMyL8trNoa3GYfSqL7xewF4ES9QRfSYkfMdVTeMYo8Vzd1ScE8DKr2D',
     ),
@@ -757,6 +760,10 @@
     'secure' => NULL,
     'http_only' => true,
     'same_site' => 'lax',
+  ),
+  'tawkto' => 
+  array (
+    'link' => 'https://tawk.to/chat/5ea44eec69e9320caac73ec7/default',
   ),
   'view' => 
   array (

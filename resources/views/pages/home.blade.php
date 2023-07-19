@@ -165,11 +165,11 @@
                                                 .cls-1 {
                                                     fill: #ef6b25;
                                                 }
-                        
+
                                                 .cls-2 {
                                                     fill: #fff;
                                                 }
-                        
+
                                             </style>
                                         </defs>
                                         <title>Artboard 3ldpi</title>
@@ -602,7 +602,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 ">
             <div class="">
                 <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.667 490.667" 
+                    version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 490.667 490.667"
                     style="enable-background:new 0 0 490.667 490.667;width: 75%;height: auto;" xml:space="preserve"
                     width="512px" height="512px" class="">
                     <g>
@@ -831,7 +831,7 @@
         </p>
     </section>
 
-    
+
 @endsection
 @section('scripts')
     {{-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -889,7 +889,7 @@
         //     'delay': 10
         // });
 
-        
+
         const tabs = document.querySelectorAll(".tabs");
         const tab = document.querySelectorAll(".tab");
         const panel = document.querySelectorAll(".tab-content");
@@ -917,6 +917,6 @@
         for (let i = 0; i < tab.length; i++) {
             tab[i].addEventListener('click', onTabClick, false);
         }
-    
+
     </script>
 @endsection

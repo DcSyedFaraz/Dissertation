@@ -37,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(Dispatcher $events)
 
     {
+        
         OrderResource::withoutWrapping();
         View::share(['deadlines'=> Deadline::all(), 'services' => Service::orderBy('name', 'ASC')->get(), 'web_setting' => WebSetting::first(),'blogs' => Blog::all()]);
 

@@ -96,7 +96,7 @@
             <a href="{{ route('blog') }}" class="block font-semibold py-2 hover:text-[#6ec1e4] {{ request()->routeIs('blog') || request()->routeIs('blog.one') || request()->routeIs('blog.two')  ? '  text-primary-one' : '' }}">Blog</a>
             <a href="{{ route('reviews') }}" class="block font-semibold py-2 hover:text-[#6ec1e4] {{ request()->routeIs('reviews')   ? '  text-primary-one' : '' }}">Reviews</a>
             <a href="{{ route('contact') }}" class="block font-semibold py-2 hover:text-[#6ec1e4] {{ request()->routeIs('contact') ? '  text-primary-one' : '' }}">Contact</a>
-            <a href="{{ route('order') }}" class="block font-semibold py-1 px-6 my-3 md:my-0 rounded bg-primary-one text-white ">
+            <a href="{{ route('order') }}" class="block font-semibold py-2 px-6 my-3 md:my-0 rounded bg-primary-one text-white ">
                 <span>Order&nbsp;Now</span>
             </a>
             @if (Auth::user())

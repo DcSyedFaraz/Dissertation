@@ -23,10 +23,11 @@ class ContactController extends Controller
 
         $contact= Contact::create($request->all());
 
+
          // Send mail to user
        Mail::to($contact->email)->send(new ContactMail($contact));
         // Send mail to admin
-       Mail::to(config('app.mail_address'))->send(new ContactAdminMail($contact));
+     Mail::to(config('app.mail_address'))->send(new ContactAdminMail($contact));
 
         return response()->json(['success'=>"Thank you for showing your intrest, We've receive your query successfully."]);
     }

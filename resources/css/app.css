@@ -19,7 +19,7 @@
     }
 
     .btn{
-        @apply bg-primary-one text-white font-medium border-2 border-primary-one px-10 py-2 md:text-lg rounded-tl-xl rounded-br-xl hover:shadow-lg uppercase;
+        @apply bg-[#FFCF56] text-black font-medium border-2 border-[#FFCF56] px-6 py-2 md:text-lg rounded-tl-xl rounded-br-xl hover:rounded-none uppercase;
     }
 
     .form-select{
